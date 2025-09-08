@@ -56,7 +56,7 @@ export default function RecipesScreen() {
   );
 
   return (
-    <Screen>
+    <Screen scrollable={false}>
       <View style={styles.header}>
         <Text style={[styles.title, { color: colors.text }]}>AI Recipes</Text>
         <Text style={[styles.subtitle, { color: colors.tabIconDefault }]}>
@@ -125,6 +125,7 @@ export default function RecipesScreen() {
             renderItem={renderRecipe}
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
+            contentContainerStyle={styles.flatListContent}
           />
         )}
       </View>
@@ -135,6 +136,8 @@ export default function RecipesScreen() {
 const styles = StyleSheet.create({
   header: {
     marginBottom: 24,
+    paddingHorizontal: 16,
+    paddingTop: 16,
   },
   title: {
     fontSize: 28,
@@ -146,6 +149,7 @@ const styles = StyleSheet.create({
   },
   generateSection: {
     marginBottom: 32,
+    paddingHorizontal: 16,
   },
   generateInfo: {
     marginBottom: 16,
@@ -178,6 +182,10 @@ const styles = StyleSheet.create({
   },
   recipesSection: {
     flex: 1,
+    paddingHorizontal: 16,
+  },
+  flatListContent: {
+    paddingBottom: 100, // Extra padding for tab bar
   },
   sectionTitle: {
     fontSize: 20,

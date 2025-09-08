@@ -19,7 +19,7 @@ export default function HomeScreen() {
     loadInventory();
     loadShopping();
     loadRecipes();
-  }, []);
+  }, [loadInventory, loadShopping, loadRecipes]);
 
   const quickActions = [
     {

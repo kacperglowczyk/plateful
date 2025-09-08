@@ -59,7 +59,7 @@ export default function ShoppingListScreen() {
   const totalItems = items.length;
 
   return (
-    <Screen>
+    <Screen scrollable={false}>
       <View style={styles.header}>
         <Text style={[styles.title, { color: colors.text }]}>
           Shopping List
@@ -111,6 +111,7 @@ export default function ShoppingListScreen() {
             renderItem={renderItem}
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
+            contentContainerStyle={styles.flatListContent}
           />
         )}
       </View>
@@ -180,6 +181,8 @@ const ShoppingListItemComponent: React.FC<ShoppingListItemComponentProps> = ({
 const styles = StyleSheet.create({
   header: {
     marginBottom: 24,
+    paddingHorizontal: 16,
+    paddingTop: 16,
   },
   title: {
     fontSize: 28,
@@ -191,14 +194,19 @@ const styles = StyleSheet.create({
   },
   addSection: {
     marginBottom: 32,
+    paddingHorizontal: 16,
   },
   listSection: {
     flex: 1,
+    paddingHorizontal: 16,
   },
   sectionTitle: {
     fontSize: 20,
     fontWeight: "600",
     marginBottom: 16,
+  },
+  flatListContent: {
+    paddingBottom: 100, // Extra padding for tab bar
   },
   loadingText: {
     textAlign: "center",
