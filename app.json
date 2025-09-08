@@ -37,6 +37,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "8dbb3a19-81e5-4046-afa8-6b2df680a478"
+      }
+    },
+    "owner": "kacperg"
   }
 }
