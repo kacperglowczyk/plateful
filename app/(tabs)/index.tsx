@@ -6,7 +6,13 @@ import { useColorScheme } from "@/hooks/useColorScheme";
 import { useInventory } from "@/hooks/useInventory";
 import { useShoppingList } from "@/hooks/useShoppingList";
 import React, { useEffect } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 export default function HomeScreen() {
   const { items: inventoryItems, loadItems: loadInventory } = useInventory();
@@ -244,6 +250,21 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 8,
     marginBottom: 8,
+    ...Platform.select({
+      android: {
+        elevation: 2,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.1,
+        shadowRadius: 2,
+      },
+      ios: {
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.1,
+        shadowRadius: 2,
+      },
+    }),
   },
   tipText: {
     fontSize: 14,

@@ -23,6 +23,17 @@ export default function TabLayout() {
             // Use a transparent background on iOS to show the blur effect
             position: "absolute",
           },
+          android: {
+            // Android-specific tab bar styling
+            backgroundColor: Colors[colorScheme ?? "light"].background,
+            borderTopWidth: 1,
+            borderTopColor: Colors[colorScheme ?? "light"].border,
+            elevation: 8,
+            shadowColor: "#000",
+            shadowOffset: { width: 0, height: -2 },
+            shadowOpacity: 0.1,
+            shadowRadius: 4,
+          },
           default: {},
         }),
       }}
